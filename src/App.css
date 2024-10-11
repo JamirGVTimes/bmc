@@ -1,10 +1,24 @@
-.App {
-  text-align: center;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #00000020;
+}
+::-webkit-scrollbar-thumb {
+  background: #111;
+}
+::placeholder {
+  color: #9b9a9a; /* Change this to your desired color */
+  opacity: 1; /* Ensures the color applies fully */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* For WebKit browsers (Chrome, Safari, etc.) */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999; /* Desired color */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +49,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.link-item {
+  padding: 0rem 0.5rem;
+}
+.link-item:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 5px #000;
 }
