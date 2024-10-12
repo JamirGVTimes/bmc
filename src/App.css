@@ -59,3 +59,13 @@ textarea::-webkit-input-placeholder {
   transition: all 0.3s ease;
   text-shadow: 1px 1px 5px #000;
 }
+.ant-input {
+  border: 1px solid #ccc;
+  color: #eee;
+  border-radius: 0;
+}
+.ant-input::placeholder {
+  opacity: 0.4;
+  color: #eee;
+  border-radius: 0;
+}

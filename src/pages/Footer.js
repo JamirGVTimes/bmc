@@ -2,7 +2,6 @@ import { Button, Col, QRCode, Row, Space, Typography } from "antd";
 import {
   XOutlined,
   InstagramOutlined,
-  FacebookOutlined,
   TikTokOutlined,
   WechatFilled,
 } from "@ant-design/icons";
@@ -61,7 +60,6 @@ export default function Footer() {
               <XOutlined style={{ fontSize: "2em" }} />
               <InstagramOutlined style={{ fontSize: "2em" }} />
               <TikTokOutlined style={{ fontSize: "2em" }} />
-              <FacebookOutlined style={{ fontSize: "2em" }} />
             </Space>
           </Paragraph>
         </Col>

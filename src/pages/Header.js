@@ -48,7 +48,11 @@ export default function Header() {
           })}
           <Button
             variant="contained"
-            style={{ background: "#b1ae06", borderRadius: "30px" }}
+            style={{
+              background: "#b1ae06",
+              borderRadius: "30px",
+              margin: "0 1rem 0 2rem",
+            }}
           >
             Donate Now
           </Button>

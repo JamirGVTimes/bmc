@@ -11,6 +11,7 @@ export default function ContactUsForm() {
         <Col span={12}>
           <Form.Item name="name">
             <Input
+              className="input"
               placeholder="Your name"
               style={{ background: "none", color: "#fff" }}
             />
