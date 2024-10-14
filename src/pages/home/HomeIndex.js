@@ -11,20 +11,20 @@ export default function HomeIndex() {
         content={`Bwikya Muslim Community unites Muslims from across the Bunyoro Region in Western Uganda, fostering faith, unity, and development.`}
       />
       <Paragraph
-        style={{ margin: 0, background: "#13240D", padding: "5rem 3rem" }}
+        style={{ margin: 0, background: "#13240D", padding: "7rem 3rem" }}
       >
         <Space>
           <img src={bmcLogoWhite} alt="bmc_logo" style={{ width: "10em" }} />
           <Paragraph style={{ lineHeight: 2.5 }}>
             <Text
-              style={{ color: "#eee", fontSize: "2em", lineHeight: 0.8 }}
+              style={{ color: "#eee", fontSize: "2.5em", lineHeight: 0.8 }}
               strong
             >
               BWIKYA MUSLIM
             </Text>
             <br />
             <Text
-              style={{ color: "#eee", fontSize: "1.7em", lineHeight: 0.8 }}
+              style={{ color: "#eee", fontSize: "2em", lineHeight: 0.8 }}
               strong
             >
               COMMUNITY
@@ -46,6 +46,23 @@ export default function HomeIndex() {
             </Button>
           </Paragraph>
         </Space>
+      </Paragraph>
+      <Paragraph
+        style={{
+          textAlign: "center",
+          padding: "1rem 0 3rem 0",
+          background: "#b1ae06",
+          margin: 0,
+        }}
+      >
+        <Text style={{ fontSize: "3rem" }} strong>
+          Our main goal is
+        </Text>
+        <br />
+        <Text style={{ fontSize: "1.2rem" }}>
+          "To unite and empower Muslims through faith, education, and community
+          service, fostering spiritual and social growth"
+        </Text>
       </Paragraph>
     </div>
   );

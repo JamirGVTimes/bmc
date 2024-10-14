@@ -1,18 +1,32 @@
-import { Typography } from "antd";
-import { Button } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Typography, Button } from "antd";
+import { useLocation, useNavigate } from "react-router-dom";
+import { MenuOutlined } from "@ant-design/icons";
 const { Paragraph, Text } = Typography;
 const menuItems = [
   { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
   { label: "Departments", path: "/departments" },
   { label: "Services", path: "/services" },
   { label: "Contacts", path: "/contacts" },
   { label: "Programmes", path: "/programmes" },
 ];
-export default function Header() {
+export default function Header({ screenWidth }) {
+  const [activePage, setActivePage] = useState("/");
+  const navigate = useNavigate();
+  const url = useLocation().pathname;
+  const handleItemSelect = (item) => {
+    setActivePage(item.label);
+    navigate(item.path);
+  };
+  useEffect(() => {
+    const checkUrl = () => {
+      setActivePage(url);
+    };
+    checkUrl();
+  }, [url]);
   return (
     <>
-      <Paragraph
+      {/* <Paragraph
         style={{
           background: "#13240D",
           color: "#eee",
@@ -24,7 +38,7 @@ export default function Header() {
       >
         Ask any question as regards to Zakkah, Swallah, Hijjah/Umrah, Nikah,
         Fasting, etc.
-      </Paragraph>
+      </Paragraph> */}
       <Paragraph
         style={{
           display: "flex",
@@ -34,29 +48,43 @@ export default function Header() {
           padding: "1px",
         }}
       >
-        <Paragraph style={{ color: "#eee", margin: 0, padding: "0.5rem" }}>
-          {menuItems.map((item) => {
-            return (
-              <Text
-                key={item.label}
-                style={{ color: "#eee" }}
-                className="link-item"
-              >
-                {item.label}
-              </Text>
-            );
-          })}
-          <Button
-            variant="contained"
+        {screenWidth < 800 ? (
+          <MenuOutlined
             style={{
-              background: "#b1ae06",
-              borderRadius: "30px",
-              margin: "0 1rem 0 2rem",
+              margin: "0.5rem",
+              fontSize: "1.5em",
+              color: "#fff",
+              cursor: "pointer",
             }}
-          >
-            Donate Now
-          </Button>
-        </Paragraph>
+          />
+        ) : (
+          <Paragraph style={{ margin: 0, padding: "0.5rem" }}>
+            {menuItems.map((item) => {
+              return (
+                <Text
+                  key={item.label}
+                  className="link-item"
+                  onClick={() => handleItemSelect(item)}
+                  style={{
+                    color: activePage === item.path ? "#f9e015" : "#eee",
+                  }}
+                >
+                  {item.label}
+                </Text>
+              );
+            })}
+            <Button
+              type="primary"
+              style={{
+                background: "#15aaf9",
+                borderRadius: "30px",
+                margin: "0 1rem 0 2rem",
+              }}
+            >
+              Donate Now
+            </Button>
+          </Paragraph>
+        )}
       </Paragraph>
     </>
   );

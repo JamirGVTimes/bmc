@@ -57,7 +57,7 @@ textarea::-webkit-input-placeholder {
 .link-item:hover {
   cursor: pointer;
   transition: all 0.3s ease;
-  text-shadow: 1px 1px 5px #000;
+  color: #b1ae06;
 }
 .ant-input {
   border: 1px solid #ccc;
